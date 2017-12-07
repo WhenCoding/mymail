@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>cn.e3mall</groupId>
+    <artifactId>e3mall-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>e3mall-manager</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>e3mall-manager-pojo</module>
+  	<module>e3mall-manager-dao</module>
+  	<module>e3mall-manager-service</module>
+  	<module>e3mall-manager-interface</module>
+  </modules>
+  <dependencies>
+  	<dependency>
+  		<groupId>cn.e3mall</groupId>
+  		<artifactId>e3mall-common</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.tomcat.maven</groupId>
+  			<artifactId>tomcat7-maven-plugin</artifactId>
+  			<configuration>
+<!--   			项目发布路径，“/” 相当于发布到tomcat/webapps/ROOT/路径下,比如tomcat的那只猫， -->
+<!--   			此时如果直接访问http://localhost:8080则默认访问该项目 -->
+  				<path>/</path>
+  				<port>8080</port>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+</project>
